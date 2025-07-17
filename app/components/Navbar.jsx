@@ -36,9 +36,7 @@ import AOS from "aos";
           <Link href="/menu"  data-aos="fade-down" className="hover:text-red-400 transition">
             المنيو
           </Link>
-          <a href="tel:+962 7 9292 8000"  data-aos="fade-down" className="hover:text-red-400 transition">
-            الحجز
-          </a>
+       
           <a href="/#contact"  data-aos="fade-down" className="hover:text-red-400 transition">
             تواصل معنا
           </a>
