@@ -42,7 +42,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-sm text-gray-500 mt-10 border-t border-gray-700 pt-4">
-        &copy; {new Date().getFullYear()} 100 Restaurant & Cafe. جميع الحقوق محفوظة.
+        &copy; {new Date().getFullYear()} JHWepDev. جميع الحقوق محفوظة.
       </div>
     </footer>
   );
