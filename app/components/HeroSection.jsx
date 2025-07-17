@@ -79,7 +79,7 @@ const HeroSection = () => {
           </p>
 
           <div className="hero-buttons font-bold flex flex-col md:flex-row justify-center  items-center gap-4 mt-4 z-10">
-            <Link href="/resrvation">
+            <Link href="tel:+962 7 9292 8000">
               <button className="bg-red-600 cursor-pointer hover:bg-red-700 text-white hover:text-black px-8 py-3 rounded-full text-lg md:text-xl transition-all duration-300 w-[220px]">
                 احجز الآن
               </button>
