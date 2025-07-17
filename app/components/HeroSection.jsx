@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-
-import CafeParticleBackground from "./CafeBackground";
 import CafeSVGParticleBackground from "./CafeBackground";
+import AOS from "aos";
+
 
 const HeroSection = () => {
   const heroRef = useRef(null);
@@ -52,53 +52,57 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <>
-    <section
-      ref={heroRef}
-      className="relative p-0 pt-10 bg-[#495e57] overflow-visible"
-      >
-        <CafeSVGParticleBackground/>
+<section
+  ref={heroRef}
+  className="relative pt-10 overflow-visible bg-[length:100%_100%] bg-[#495e57]"
 
-      <div className="relative mx-auto my-0 max-w-[1200px] flex flex-wrap items-center justify-around p-[2rem] gap-[100px] max-md:gap-0 max-md:pl-[100px]">
+>
 
-        <div className="text-white  pr-[2rem] font-serif max-w-[650px]">
-          <h1 className="text-5xl mb-[0.5rem] font-bold tracking-[2px] text-center"><span className="text-[#e2262c] text-6xl">100</span> Restaurant <span className="text-[#e2262c]" >&</span> Cafe</h1>
-          <h3 className="hero-subtitle text-[1.75rem] mb-[1rem] text-right text-gray-200 ">عمان , اشارة مستشفى الامير حمزة</h3>
+      <CafeSVGParticleBackground />
 
-          <p className="hero-subtitle    text-right text-[1.25rem] leading-relaxed mb-[1.5rem] text-gray-200 ">
-            مش بس نكهة الاكل، هون بتلقى الذكريات، الدفء، والريحة اللي بتخليك تبتسم <br />
-            أهلاً في المكان اللي رح يصير روتينك المفضل
+      <div className="relative mx-auto max-w-[1200px] flex flex-col md:flex-row items-center justify-between max-md:gap-1 p-6 gap-10">
+        {/* Left Text Content */}
+        <div className="text-white font-serif w-full md:w-1/2 md:pr-8 max-md:pt-10 max-md:pb-[-10px] text-center md:text-right">
+          <h1 className="hero-logo text-4xl md:text-5xl font-bold text-center tracking-wide mb-3">
+            <span className="text-[#e2262c] text-5xl md:text-6xl">100</span>{" "}
+            Restaurant <span className="text-[#e2262c]">&</span> Cafe
+          </h1>
+
+          <h3 className="hero-subtitle text-2xl font-bold md:text-3xl text-gray-200 mb-2">
+            عمان , اشارة مستشفى الامير حمزة
+          </h3>
+
+          <p className="hero-subtitle text-base md:text-lg text-gray-200 leading-relaxed mb-6 px-2 md:px-0">
+            مش بس نكهة الأكل، هون بتلقى الذكريات، الدفء، والريحة اللي بتخليك تبتسم.
+            <br className="hidden md:block" />
+            أهلاً في المكان اللي رح يصير روتينك المفضل.
           </p>
 
-          <div className="hero-buttons flex flex-col justify-center items-center md:flex-row gap-6 mt-10 z-10">
+          <div className="hero-buttons font-bold flex flex-col md:flex-row justify-center  items-center gap-4 mt-4 z-10">
             <Link href="/resrvation">
-              <button className="bg-[#e2262c] cursor-pointer hover:bg-[#e2262cd7] text-white px-8 py-4 rounded-full text-xl transition-all duration-300">
+              <button className="bg-red-600 cursor-pointer hover:bg-red-700 text-white hover:text-black px-8 py-3 rounded-full text-lg md:text-xl transition-all duration-300 w-[220px]">
                 احجز الآن
               </button>
             </Link>
 
             <Link href="/menu">
-              <button className="border cursor-pointer border-white text-white px-8 py-4 rounded-full text-xl bg-[#43524d] hover:bg-white hover:text-black transition-all duration-300">
+              <button className="border cursor-pointer border-white text-white px-8 py-3 rounded-full text-lg md:text-xl bg-[#43524d] hover:bg-white hover:text-black transition-all duration-300 w-[220px]">
                 تصفح المنيو
               </button>
-            </Link>
+            </Link> 
           </div>
         </div>
 
-
-
-
-
-        <img
-          src="/hero pic.jpg"
-          alt="100 Restaurant & Cafe Logo"
-          className="w-[385px] h-[452px] object-cover rounded-[1rem] relative right-[1.75rem] bottom-[-80px] drop-shadow-[10px_4px_20px_rgba(0,0,0,0.5)]"
-        />
-
-
+        {/* Right Image stays last on all devices */}
+        <div className="hero-logo relative w-full md:w-auto flex justify-center mt-8 md:mt-0">
+          <img
+            src="/food1.jpg"
+            alt="100 Restaurant & Cafe Logo"
+            className=" w-[280px] h-[360px] md:w-[365px] md:h-[452px] relative bottom-[-80px] object-cover rounded-[1rem] drop-shadow-[10px_4px_20px_rgba(0,0,0,0.5)]"
+          />
+        </div>
       </div>
     </section>
-    </>
   );
 };
 

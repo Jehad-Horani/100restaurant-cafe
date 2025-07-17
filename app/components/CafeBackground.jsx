@@ -44,7 +44,8 @@ export default function SmoothCafeParticles() {
               },
             },
             size: {
-              value: 18,
+              value: 20,
+              
               random: { enable: true, minimumValue: 12 },
               anim: {
                 enable: true,
@@ -55,7 +56,7 @@ export default function SmoothCafeParticles() {
             },
             move: {
               enable: true,
-              speed: 0.3,          // حركة بطيئة وناعمة جداً
+              speed: 0.1,          // حركة بطيئة وناعمة جداً
               direction: "none",
               random: true,
               straight: false,
@@ -67,30 +68,12 @@ export default function SmoothCafeParticles() {
               enable: true,
               distance: 110,
               color: "#A67B5B",
-              opacity: 0.15,
+              opacity: 0.7,
               width: 1,
               triangles: { enable: false },
             },
           },
-          interactivity: {
-            detectsOn: "canvas",
-            events: {
-              onHover: {
-                enable: true,
-                mode: "grab",
-                parallax: { enable: true, force: 10, smooth: 20 },
-              },
-              onClick: { enable: false },
-              resize: true,
-            },
-            modes: {
-              grab: {
-                distance: 140,
-                links: { opacity: 0.5 },
-              },
-              repulse: { distance: 0 },
-            },
-          },
+     
           detectRetina: true,
           smooth: true,
         }}
