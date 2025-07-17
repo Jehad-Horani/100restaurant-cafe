@@ -96,7 +96,7 @@ const HeroSection = () => {
         {/* Right Image stays last on all devices */}
         <div className="hero-logo relative w-full md:w-auto flex justify-center mt-8 md:mt-0">
           <img
-            src="/food1.jpg"
+            src="/vipes.jpg"
             alt="100 Restaurant & Cafe Logo"
             className=" w-[280px] h-[360px] md:w-[365px] md:h-[452px] relative bottom-[-80px] object-cover rounded-[1rem] drop-shadow-[10px_4px_20px_rgba(0,0,0,0.5)]"
           />
