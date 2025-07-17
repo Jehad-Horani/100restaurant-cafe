@@ -32,10 +32,10 @@ const items = [
     },
     {
         id: 4,
-        name: "Fettuccine",
-        description: "الفوتشيني بمكوناتنا الخاصة",
+        name: "Penne Arrabbiata",
+        description: "المعكرونة الإيطالية الحارة بمكوناتنا الخاصة",
         price: "3.00 JD",
-        image: "/Fettuccine.jpg",
+        image: "/penne.jpg",
     },
 ];
 
@@ -80,7 +80,7 @@ const PopularItems = () => {
                             <div className="p-5">
                                 <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
                                 <p className="text-base text-gray-600 mb-3">{item.description}</p>
-                                <span className="text-yellow-500 font-bold text-lg">
+                                <span className="text-red-600 font-bold text-lg">
                                     {item.price}
                                 </span>
                             </div>

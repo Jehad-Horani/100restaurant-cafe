@@ -20,7 +20,7 @@ import AOS from "aos";
 
   return (
     <header
-      className={`fixed top-0 left-1/2 -translate-x-1/2 w-11/12 md:w-1/2 rounded-b-4xl z-50 transition-all duration-300 bg-gray-100 shadow-lg`}
+      className={`fixed top-0 left-1/2 -translate-x-1/2 w-11/12 md:w-1/2 rounded-b-4xl z-50 transition-all duration-300 bg-gray-200 shadow-lg`}
     >
       <nav className="flex items-center justify-between px-4 py-3 md:px-6 md:py-4 text-black">
         {/* Logo */}
