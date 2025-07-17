@@ -19,7 +19,7 @@ const Footer = () => {
           <ul className="space-y-2 text-gray-300">
             <li><Link href="/" className="hover:text-primary transition">الرئيسية</Link></li>
             <li><Link href="/menu" className="hover:text-primary transition">قائمة الطعام</Link></li>
-            <li><Link href="/booking" className="hover:text-primary transition">الحجز</Link></li>
+            <li><Link href="tel:+962 7 9292 8000" className="hover:text-primary transition">الحجز</Link></li>
             <li><Link href="/#contact" className="hover:text-primary transition">تواصل معنا</Link></li>
           </ul>
         </div>
