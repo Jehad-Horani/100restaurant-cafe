@@ -70,7 +70,7 @@ import AOS from "aos";
           <Link href="tel:+962 7 9292 8000" onClick={toggleMenu} className="hover:text-pink-400">
             الحجز
           </Link>
-          <a href="#contact" onClick={toggleMenu} className="hover:text-pink-400">
+          <a href="/#contact" onClick={toggleMenu} className="hover:text-pink-400">
             تواصل معنا
           </a>
         </div>
