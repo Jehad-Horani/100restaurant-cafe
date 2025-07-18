@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import BreakfastBuffetSection from "../components/BreakfastBuffet";
 
 
 
@@ -266,21 +267,21 @@ const initialItems = {
     { nameAr: "سبيشال 100", nameEn: "Special 100", price: "3.50 JOD", },
   ],
   shisha: [
-    { nameAr: "خلطة 100", nameEn: "Shisha Mix 100", price: "4.00 JOD" },
-    { nameAr: "تفاحتين نخلة", nameEn: "Two Apples Molasses / Nakhla", price: "3.50 JOD" },
-    { nameAr: "تفاحتين مزايا", nameEn: "Two Apples Molasses / Mazaya", price: "3.00 JOD" },
-    { nameAr: "ليمون ونعنع", nameEn: "Lemon & Mint", price: "3.00 JOD" },
-    { nameAr: "بطيخ ونعنع", nameEn: "Watermelon & Mint", price: "3.00 JOD" },
-    { nameAr: "علكة ونعنع", nameEn: "Gum with Mint", price: "3.00 JOD" },
-    { nameAr: "علكة وقرفة", nameEn: "Gum with Cinnamon", price: "3.00 JOD" },
-    { nameAr: "عنب ونعنع", nameEn: "Grapes with Mint", price: "3.00 JOD" },
-    { nameAr: "عنب وتوت", nameEn: "Grapes with Berry", price: "3.00 JOD" },
-    { nameAr: "الكيف", nameEn: "Al-Kif", price: "3.00 JOD" },
-    { nameAr: "كاندي", nameEn: "Candy", price: "3.00 JOD" },
-    { nameAr: "لوف", nameEn: "Love", price: "3.00 JOD" },
-    { nameAr: "بلومست", nameEn: "Bluemist", price: "3.00 JOD" },
-    { nameAr: "زغلول شبراوي (2 راس)", nameEn: "Zaghloul (2 Bowl)", price: "3.00 JOD" },
-    { nameAr: "غيار راس", nameEn: "Change the Hookah Bowl", price: "1.50 JOD" },
+    { nameAr: " ارجيلة خلطة 100", nameEn: "Shisha Mix 100", price: "4.00 JOD" },
+    { nameAr: "ارجيلة تفاحتين نخلة", nameEn: "Two Apples Molasses / Nakhla", price: "3.50 JOD" },
+    { nameAr: "ارجيلة تفاحتين مزايا", nameEn: "Two Apples Molasses / Mazaya", price: "3.00 JOD" },
+    { nameAr: "ارجيلة ليمون ونعنع", nameEn: "Lemon & Mint", price: "3.00 JOD" },
+    { nameAr: "ارجيلة بطيخ ونعنع", nameEn: "Watermelon & Mint", price: "3.00 JOD" },
+    { nameAr: "ارجيلة علكة ونعنع", nameEn: "Gum with Mint", price: "3.00 JOD" },
+    { nameAr: "ارجيلة علكة وقرفة", nameEn: "Gum with Cinnamon", price: "3.00 JOD" },
+    { nameAr: "ارجيلة عنب ونعنع", nameEn: "Grapes with Mint", price: "3.00 JOD" },
+    { nameAr: "ارجيلةعنب وتوت", nameEn: "Grapes with Berry", price: "3.00 JOD" },
+    { nameAr: "ارجيلة الكيف", nameEn: "Al-Kif", price: "3.00 JOD" },
+    { nameAr: "ارجيلة كاندي", nameEn: "Candy", price: "3.00 JOD" },
+    { nameAr: "ارجيلة لوف", nameEn: "Love", price: "3.00 JOD" },
+    { nameAr: "ارجيلة بلومست", nameEn: "Bluemist", price: "3.00 JOD" },
+    { nameAr: "ارجيلة زغلول شبراوي (2 راس)", nameEn: "Zaghloul (2 Bowl)", price: "3.00 JOD" },
+    { nameAr: "غيار راس ارجيلة", nameEn: "Change the Hookah Bowl", price: "1.50 JOD" },
   ],
 };
 
@@ -289,16 +290,20 @@ export default function MenuPage() {
 
   return (
     <section className="py-10 bg-[#fafafa] text-[#333] pt-30">
-      <div className="container max-w-5xl mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-center mb-8">قائمة الطعام | Menu</h1>
+      <div className="container max-w-5xl mx-auto">
+        <h1 className="text-4xl md:text-6xl px-4 font-bold text-center mb-8">قائمة الطعام | Menu</h1>
 
-        <div className="mb-8">
+      <BreakfastBuffetSection />
+      <div className="px-4">
+        <h1 className="text-2xl md:text-3xl px-4 font-bold text-center mb-2 mt-8"> :ابحث عن اي صنف تريده</h1>
+
+        <div className="mb-8 mt-2">
           <input
             type="text"
             placeholder="ابحث عن صنف"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full p-3 text-lg border border-gray-300 rounded-xl shadow-sm"
+            className="w-full p-3 text-lg border border-gray-900 rounded-xl shadow-sm"
           />
         </div>
 
@@ -343,6 +348,7 @@ export default function MenuPage() {
             </motion.div>
           );
         })}
+      </div>
       </div>
     </section>
   );
