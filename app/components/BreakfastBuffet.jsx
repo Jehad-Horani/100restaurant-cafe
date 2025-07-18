@@ -1,12 +1,55 @@
-// components/BreakfastBuffetSection.jsx
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 
 export default function BreakfastBuffetSection() {
   const sectionRef = useRef(null);
+  const [timeLeft, setTimeLeft] = useState(null);
+  const [label, setLabel] = useState("");
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const now = new Date();
+      const open = new Date();
+      const close = new Date();
+      open.setHours(9, 0, 0, 0);
+      close.setHours(13, 0, 0, 0);
+
+      if (now < open) {
+        // قبل الساعة 9
+        const diff = open - now;
+        setLabel("الوقت المتبقي لفتح البوفيه:");
+        updateTimer(diff);
+      } else if (now >= open && now < close) {
+        // بين 9 و 1
+        const diff = close - now;
+        setLabel("الوقت المتبقي لانتهاء البوفيه:");
+        updateTimer(diff);
+      } else {
+        // بعد 1
+        setTimeLeft("انتهى البوفيه ");
+        setLabel("");
+      }
+    };
+
+    const updateTimer = (diff) => {
+      const hours = Math.floor(diff / 1000 / 60 / 60);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      setTimeLeft(
+        `${hours.toString().padStart(2, "0")}:${minutes
+          .toString()
+          .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+      );
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -31,6 +74,14 @@ export default function BreakfastBuffetSection() {
         delay: 0.6,
         duration: 1,
         ease: "power2.out",
+      });
+
+      gsap.from(".buffet-countdown", {
+        opacity: 0,
+        y: 10,
+        delay: 1,
+        duration: 1,
+        ease: "power1.out",
       });
     }, sectionRef);
 
@@ -61,6 +112,18 @@ export default function BreakfastBuffetSection() {
           من الساعة <span className="font-bold">9:00 صباحاً</span> إلى{" "}
           <span className="font-bold">1:00 مساءً</span>
         </p>
+
+        {/* العداد التفاعلي */}
+        {timeLeft && (
+          <div className="mt-4 buffet-countdown">
+            {label && (
+              <p className="text-sm text-gray-600 mb-1">{label}</p>
+            )}
+            <div className="text-2xl md:text-3xl font-mono font-bold text-emerald-800 bg-white px-4 py-2 rounded-xl inline-block shadow-md">
+              {timeLeft}
+            </div>
+          </div>
+        )}
 
         <div className="mt-6 buffet-price">
           <span className="text-4xl md:text-5xl font-extrabold text-red-600">

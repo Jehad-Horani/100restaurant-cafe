@@ -54,7 +54,7 @@ const HeroSection = () => {
   return (
 <section
   ref={heroRef}
-  className="relative pt-10 overflow-visible bg-[length:100%_100%] bg-[#495e57]"
+  className="relative pt-10 overflow-visible bg-[length:100%_100%] bg-gray-900"
 
 >
 
